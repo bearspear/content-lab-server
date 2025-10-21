@@ -41,7 +41,7 @@ npm install
 content-lab-server/
 ├── server.js           # Express server implementation
 ├── package.json        # Project configuration and pkg settings
-├── public/            # Content Lab Angular app (copied from ng-md2html build)
+├── public/            # Content Lab Angular app (copied from content-lab build)
 │   ├── index.html
 │   ├── assets/
 │   └── *.js, *.css
@@ -59,8 +59,8 @@ content-lab-server/
 First, build the Content Lab Angular application with relative base href:
 
 ```bash
-# Navigate to the ng-md2html project
-cd /path/to/ng-md2html
+# Navigate to the content-lab project
+cd /path/to/content-lab
 
 # Build Angular app for distribution
 npx ng build content-lab --configuration=production --base-href ./
@@ -76,7 +76,7 @@ cd /path/to/content-lab-server
 rm -rf public
 
 # Copy new build
-cp -r /path/to/ng-md2html/dist/apps/content-lab/browser public
+cp -r /path/to/content-lab/dist/apps/content-lab/browser public
 ```
 
 ### Step 3: Build Executables
@@ -169,13 +169,13 @@ To update the Content Lab application served by the executables:
 
 ```bash
 # 1. Build latest Content Lab
-cd /path/to/ng-md2html
+cd /path/to/content-lab
 npx ng build content-lab --configuration=production --base-href ./
 
 # 2. Update server public directory
 cd /path/to/content-lab-server
 rm -rf public
-cp -r /path/to/ng-md2html/dist/apps/content-lab/browser public
+cp -r /path/to/content-lab/dist/apps/content-lab/browser public
 
 # 3. Rebuild executables
 npm run build
@@ -275,7 +275,7 @@ Michael Behringer
 
 ## Related Projects
 
-- **ng-md2html** - Content Lab Angular application source
+- **content-lab** - Content Lab Angular application source
 - **content-lab-electron** - Electron desktop app distribution
 
 ## Version
