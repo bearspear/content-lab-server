@@ -11,14 +11,39 @@
     "build": "pkg . --out-path dist"
   },
   "dependencies": {
-    "express": "^4.18.2",
+    "adm-zip": "^0.5.16",
+    "axios": "^1.13.2",
+    "cheerio": "^1.0.0-rc.10",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
-    "open": "^9.1.0"
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "helmet": "^7.1.0",
+    "jszip": "^3.10.1",
+    "mime-types": "^2.1.35",
+    "multer": "^1.4.5-lts.1",
+    "open": "^9.1.0",
+    "pdf-lib": "^1.17.1",
+    "puppeteer": "^21.6.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "uuid": "^9.0.1",
+    "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
   },
   "pkg": {
+    "scripts": [
+      "node_modules/axios/lib/**/*.js",
+      "node_modules/axios/dist/**/*.js"
+    ],
     "assets": [
-      "public/**/*"
+      "public/**/*",
+      "src/**/*",
+      "fonts/**/*",
+      "node_modules/axios/dist/**/*"
     ],
     "targets": [
       "node18-macos-x64",
